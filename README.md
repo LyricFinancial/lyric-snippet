@@ -2,7 +2,7 @@
 
 Javascript library to allow you to integrate with Lyric services.
 
-## How to Use
+## How to Use - Synchronous
 
 1) Include js and css file in header of index.html
 
