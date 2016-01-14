@@ -59,6 +59,16 @@ module.exports = function(grunt) {
             expand: true
           }
        ]   
+      },
+      build_appjs: {
+        files: [
+          {
+            src: [ '<%= app_files.js %>' ],
+            dest: '<%= build_dir %>/',
+            cwd: '.',
+            expand: true
+          }
+        ]
       }
     },
     /**
@@ -97,6 +107,32 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    /**
+     * The `index` task compiles the `index.html` file as a Grunt template. CSS
+     * and JS files co-exist here but they get split apart later.
+     */
+    index: {
+
+      /**
+       * During development, we don't want to have wait for compilation,
+       * concatenation, minification, etc. So to avoid these steps, we simply
+       * add all script files directly to the `<head>` of `index.html`. The
+       * `src` property contains the list of included files.
+       */
+      build: {
+        dir: '<%= build_dir %>',
+        src: [
+          '<%= vendor_files.js %>',
+          '<%= build_dir %>/src/**/*.js',
+          '<%= html2js.common.dest %>',
+          '<%= html2js.app.dest %>',
+          '<%= vendor_files.css %>',
+          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+        ]
+      }
+    },
+
     htmlConvert: {
       options: {
         // custom options, see below     
@@ -158,7 +194,7 @@ module.exports = function(grunt) {
   grunt.initConfig( grunt.util._.extend( taskConfig, userConfig ) );
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'jshint', 'coffeelint', 'coffee', 'copy:build_app_assets',
-    'concat:build_css', 'less:build', 'htmlConvert', 'concat:compile_js', 'uglify']);
+  grunt.registerTask('default', ['clean', 'htmlConvert', 'jshint', 'coffeelint', 'coffee', 'less:build', 'concat:build_css', 'copy:build_app_assets',
+    'copy:build_appjs', 'concat:compile_js', 'uglify']);
 
 };
