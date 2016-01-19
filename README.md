@@ -26,3 +26,8 @@ Or call from within another javascript function after any form validation has be
 5) If an error occurs, call the advanceRequestError function.
 
 	advanceRequestError()
+
+6) Override Terms & Conditions (Optional)
+
+	angular.element(document).ready ->
+      document.getElementById('terms-container').innerHTML = "Custom Terms & Conditions"
