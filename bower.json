@@ -16,7 +16,9 @@
     "src",
     "node_modules",
     "bower_components",
+    ".gitignore",
     "bower.json",
+    "build.config.js",
     "Gruntfile.js",
     "package.json",
     "README.md"
