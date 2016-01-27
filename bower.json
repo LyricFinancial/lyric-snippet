@@ -1,6 +1,6 @@
 {
   "name": "lyric-snippet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/LyricFinancial/lyric-snippet",
   "description": "Javascript project that includes functions to interact with the Lyric system.",
   "main": "lyric-snippet.js",

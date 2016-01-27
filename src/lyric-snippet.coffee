@@ -23,9 +23,9 @@ class LyricSnippet
 
     window.onclick = (event) ->
       if event.target == modal
-        modal.style.display = 'none'
+        @modal.style.display = 'none'
       if event.target == errorModal
-        errorModal.style.display = 'none'
+        @errorModal.style.display = 'none'
 
 confirm: ->
   @modal.style.display = "block"
