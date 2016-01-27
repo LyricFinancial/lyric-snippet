@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         src: [
           '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
         ],
-        dest: '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+        dest: '<%= compile_dir %>/<%= pkg.name %>.css'
       },
       compile_js: {
         options: {
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
           '<%= build_dir %>/src/**/*.js', 
           'module.suffix' 
         ],
-        dest: '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.min.js'
+        dest: '<%= compile_dir %>/<%= pkg.name %>.min.js'
       }
     },
     copy: {

@@ -27,32 +27,32 @@ class LyricSnippet
       if event.target == errorModal
         @errorModal.style.display = 'none'
 
-confirm: ->
-  @modal.style.display = "block"
+  confirm: ->
+    @modal.style.display = "block"
 
-closeModal: ->
-  @modal.style.display = "none"
-  @errorModal.style.display = "none"
+  closeModal: ->
+    @modal.style.display = "none"
+    @errorModal.style.display = "none"
 
-confirmed: ->
-  if window.CustomEvent
-    event = new CustomEvent('confirmationComplete')
-  else
-    event = document.createEvent('CustomEvent')
-    event.initCustomEvent 'confirmationComplete', true, true
-  document.dispatchEvent event
+  confirmed: ->
+    if window.CustomEvent
+      event = new CustomEvent('confirmationComplete')
+    else
+      event = document.createEvent('CustomEvent')
+      event.initCustomEvent 'confirmationComplete', true, true
+    document.dispatchEvent event
 
-  @modal.style.display = 'none'
-  @waitModal.style.display = "block"
+    @modal.style.display = 'none'
+    @waitModal.style.display = "block"
 
-advanceRequestComplete: (accessToken) ->
-  @waitModal.style.display = "none"
-  #window.open('http://vatm.dev:8080/#/advance?access_token=' + accessToken,'_blank')
-  window.open('https://api.lyricfinancial.com/vatm/#/advance?access_token=' + accessToken,'_blank')
+  advanceRequestComplete: (accessToken) ->
+    @waitModal.style.display = "none"
+    #window.open('http://vatm.dev:8080/#/advance?access_token=' + accessToken,'_blank')
+    window.open('https://api.lyricfinancial.com/vatm/#/advance?access_token=' + accessToken,'_blank')
 
-advanceRequestError: (error) ->
-  document.getElementById('errorMessage').innerHTML = error.statusText
-  @waitModal.style.display = "none"
-  @errorModal.style.display = "block"
+  advanceRequestError: (error) ->
+    document.getElementById('errorMessage').innerHTML = error.statusText
+    @waitModal.style.display = "none"
+    @errorModal.style.display = "block"
 
   
