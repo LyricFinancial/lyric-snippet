@@ -12,8 +12,6 @@ lib-cov
 pids
 logs
 results
-
 build/
-dist/
 node_modules/
 vendor/

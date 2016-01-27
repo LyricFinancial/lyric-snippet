@@ -11,7 +11,7 @@ Javascript library to allow you to integrate with Lyric services.
 
 2) Call confirm() function to display Terms and Conditions that the user will need to agree to before saving their data.
 
-	<button class="md-raised md-primary" onclick="confirm()">Get Advance</button>
+	<button class="md-raised md-primary" onclick="lyric.confirm()">Get Advance</button>
 
 Or call from within another javascript function after any form validation has been completed.
 
@@ -21,11 +21,11 @@ Or call from within another javascript function after any form validation has be
 
 4) Once the Lyric API has been successfully called, call advanceRequestComplete function passing the ACCESS_TOKEN that was returned in the header of the Lyric /clients API call.  This will remove the wait indicator as well as opent the Lyric vAtm page in a new browser.
 
-	advanceRequestComplete(accessToken);
+	lyric.advanceRequestComplete(accessToken);
 
 5) If an error occurs, call the advanceRequestError function.
 
-	advanceRequestError(error)
+	lyric.advanceRequestError(error)
 
 6) Override Terms & Conditions (Optional)
 
