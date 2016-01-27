@@ -22,19 +22,19 @@ class LyricSnippet
 
 
     window.onclick = (event) =>
-      if event.target == modal
+      if event.target == @modal
         @modal.style.display = 'none'
-      if event.target == errorModal
+      if event.target == @errorModal
         @errorModal.style.display = 'none'
 
   confirm: ->
     @modal.style.display = "block"
 
-  closeModal: ->
+  @closeModal: ->
     @modal.style.display = "none"
     @errorModal.style.display = "none"
 
-  confirmed: ->
+  @confirmed: ->
     if window.CustomEvent
       event = new CustomEvent('confirmationComplete')
     else
