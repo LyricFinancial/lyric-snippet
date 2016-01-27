@@ -11,7 +11,7 @@
     "Amy Madden"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "src",
     "node_modules",
