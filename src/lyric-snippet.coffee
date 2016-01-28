@@ -1,4 +1,8 @@
 class LyricSnippet
+  @modal
+  @waitModal
+  @errorModal
+  @closeButton
   constructor: (termsHtml) ->
     modalTemplate = mytemplate["templates/terms_and_conditions_modal.tpl.html"]
     document.body.insertAdjacentHTML('beforeend', modalTemplate)
@@ -12,10 +16,10 @@ class LyricSnippet
     if termsHtml?
       document.getElementById('terms-container').innerHTML = termsHtml
 
-    @modal = document.getElementById('tcModal')
-    @waitModal = document.getElementById('waitModal')
-    @errorModal = document.getElementById('errorModal')
-    @closeButton = document.getElementsByClassName("close")[0]
+    @modal = LyricSnippet.modal = document.getElementById('tcModal')
+    @waitModal = LyricSnippet.waitModal = document.getElementById('waitModal')
+    @errorModal = LyricSnippet.errorModal = document.getElementById('errorModal')
+    @closeButton = LyricSnippet.closeButton = document.getElementsByClassName("close")[0]
 
     @closeButton.onclick = =>
       @modal.style.display = 'none'
@@ -27,12 +31,13 @@ class LyricSnippet
       if event.target == @errorModal
         @errorModal.style.display = 'none'
 
+
   confirm: ->
     @modal.style.display = "block"
 
   @closeModal: ->
-    @modal.style.display = "none"
-    @errorModal.style.display = "none"
+    LyricSnippet.modal.style.display = "none"
+    LyricSnippet.errorModal.style.display = "none"
 
   @confirmed: ->
     if window.CustomEvent
@@ -42,8 +47,8 @@ class LyricSnippet
       event.initCustomEvent 'confirmationComplete', true, true
     document.dispatchEvent event
 
-    @modal.style.display = 'none'
-    @waitModal.style.display = "block"
+    LyricSnippet.modal.style.display = 'none'
+    LyricSnippet.waitModal.style.display = "block"
 
   advanceRequestComplete: (accessToken) ->
     @waitModal.style.display = "none"
