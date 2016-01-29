@@ -53,7 +53,8 @@ class LyricSnippet
   advanceRequestComplete: (accessToken) ->
     @waitModal.style.display = "none"
     #window.open('http://vatm.dev:8080/#/advance?access_token=' + accessToken,'_blank')
-    window.open('https://api.lyricfinancial.com/vatm/#/advance?access_token=' + accessToken,'_blank')
+    window.open('
+https://demoservices.lyricfinancial.com/vatm/#/advance?access_token=' + accessToken,'_blank')
 
   advanceRequestError: (error) ->
     document.getElementById('errorMessage').innerHTML = error.statusText
