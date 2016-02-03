@@ -2,7 +2,9 @@
 
 Javascript library to allow you to integrate with Lyric services.
 
-## How to Use - Synchronous
+## Snippet
+
+### How to Use - Synchronous
 
 1) Include js and css file in your project
 
@@ -38,3 +40,47 @@ Or call from within another javascript function after any form validation has be
 6) If an error occurs, call the advanceRequestError function.
 
 	lyric.advanceRequestError(error)
+
+## Widget
+
+Once on of your clients is registered in the Lyric system, you can integrate the Lyric Widget into your website so when the client is logged in, they can see their Advance Amount, Amount Repaid, Amount Remaining and Available Balance.
+
+### How to Use
+
+1) Create a Web Service Call that generates a JWT token
+
+The Lyric Widget makes a web service call to Lyric's APIs to get the Advance information.  In order to authenticate this call, you will need to provide a JWT token to the widget.  You can find more information on this (here)[].
+
+2) Call your new web service and get the newly generated token.  You can store this token in local storage if you'd like so you're not creating a new token every time the page is refreshed.
+
+3) Create an instance of Lyric Widget and call loadData() on it passing the newly generated token.  loadData() returns a promise so in the .then you can then get the html of the widget to add to your web page.
+
+	lyricWidget = new LyricWidget()
+	lyricWidget.loadData(token)
+	.then ->
+		html = lyricWidget.getWidget()
+		document.getElementById('lyric-container').innerHtml = html
+
+4) Customize the lyric widget how you'd like
+
+	.widget-label {
+		font-weight: bold;
+	}
+
+	.widget-value {
+		
+	}
+
+	.widget-container {
+		border-radius: 25px;
+	  background: #d01e1e;
+	  color: #fff;
+	  padding: 20px; 
+	  width: 235px;
+
+	  h3 {
+	  	margin-top: 2px;
+	  }
+	}
+
+ 
