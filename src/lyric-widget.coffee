@@ -1,10 +1,13 @@
 class LyricWidget
   @advanceStatusData
-  constructor: ->
+  @vatmUrl = 'http://demo.dev:8082'
+  constructor: (vatmUrl) ->
+    if vatmUrl?
+      @vatmUrl = vatmUrl
 
   loadData: (token)->
     request = new XMLHttpRequest
-    request.open 'GET', "http://demo.dev:8082/clients/a/advanceStatus", true
+    request.open 'GET', @vatmUrl + "/clients/a/advanceStatus", true
     me = this
 
     promise = new Promise((resolve, reject) ->
