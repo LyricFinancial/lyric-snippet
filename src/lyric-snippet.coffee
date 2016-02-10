@@ -3,7 +3,7 @@ class LyricSnippet
   @waitModal
   @errorModal
   @closeButton
-  @vatmUrl = 'https://demoservices.lyricfinancial.com'
+  @vatmUrl
   constructor: (termsHtml, vatmUrl) ->
     modalTemplate = mytemplate["templates/terms_and_conditions_modal.tpl.html"]
     document.body.insertAdjacentHTML('beforeend', modalTemplate)
@@ -19,6 +19,8 @@ class LyricSnippet
 
     if vatmUrl?
       @vatmUrl = vatmUrl
+    else
+      @vatmUrl = 'https://demoservices.lyricfinancial.com'
 
     @modal = LyricSnippet.modal = document.getElementById('tcModal')
     @waitModal = LyricSnippet.waitModal = document.getElementById('waitModal')
@@ -56,7 +58,6 @@ class LyricSnippet
 
   advanceRequestComplete: (accessToken) ->
     @waitModal.style.display = "none"
-    #window.open('http://vatm.dev:8080/#/advance?access_token=' + accessToken,'_blank')
     window.open(@vatmUrl + '/vatm/#/advance?access_token=' + accessToken,'_blank')
 
   advanceRequestError: (error) ->

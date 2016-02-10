@@ -1,9 +1,11 @@
 class LyricWidget
   @advanceStatusData
-  @vatmUrl = 'http://demo.dev:8082'
+  @vatmUrl
   constructor: (vatmUrl) ->
     if vatmUrl?
       @vatmUrl = vatmUrl
+    else
+      @vatmUrl = 'https://demoservices.lyricfinancial.com'
 
   loadData: (token)->
     request = new XMLHttpRequest
