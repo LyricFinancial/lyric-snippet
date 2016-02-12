@@ -1,15 +1,16 @@
 class LyricWidget
   @advanceStatusData
-  @vatmUrl
-  constructor: (vatmUrl) ->
-    if vatmUrl?
-      @vatmUrl = vatmUrl
+  @advanceUrl
+  constructor: (memberToken, advanceUrl) ->
+    if advanceUrl?
+      @advanceUrl = advanceUrl
     else
-      @vatmUrl = 'https://demoservices.lyricfinancial.com'
+      @advanceUrl = 'https://integrationservices.lyricfinancial.com/vatmAPI/v1/clients/' + memberToken + '/advanceStatus.json'
 
   loadData: (token)->
     request = new XMLHttpRequest
-    request.open 'GET', @vatmUrl + "/clients/a/advanceStatus", true
+    request.open 'GET', @advanceUrl, true
+    request.setRequestHeader('Authorization', 'Bearer ' + token)
     me = this
 
     promise = new Promise((resolve, reject) ->
@@ -33,9 +34,8 @@ class LyricWidget
 
     if isBlank(@advanceStatusData) == false
       template = mytemplate["templates/advance_status_widget.tpl.html"]
-      template = template.replace("{{advanceAmount}}", '$' + @advanceStatusData.advanceAmount)
-      template = template.replace("{{amountRepaid}}", '$' + @advanceStatusData.amountRepaid)
-      template = template.replace("{{amountRemaining}}", '$' + @advanceStatusData.amountRemaining)
+      template = template.replace("{{advanceLimit}}", '$' + @advanceStatusData.advanceLimit)
+      template = template.replace("{{currentBalance}}", '$' + @advanceStatusData.currentBalance)
       template = template.replace("{{availableBalance}}", '$' + @advanceStatusData.availableBalance)
     return template
 
