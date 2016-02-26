@@ -43,7 +43,7 @@ Or call from within another javascript function after any form validation has be
 
 ## Widget
 
-Once on of your clients is registered in the Lyric system, you can integrate the Lyric Widget into your website so when the client is logged in, they can see their Advance Amount, Amount Repaid, Amount Remaining and Available Balance.
+Once one of your clients is registered in the Lyric system, you can integrate the Lyric Widget into your website so when the client is logged in, they can see their Advance Limit, Current Balance and Available Balance.
 
 ### How to Use
 
