@@ -34,9 +34,9 @@ class LyricWidget
 
     if isBlank(@advanceStatusData) == false
       template = mytemplate["templates/advance_status_widget.tpl.html"]
-      template = template.replace("{{advanceLimit}}", '$' + @advanceStatusData.advanceLimit)
-      template = template.replace("{{currentBalance}}", '$' + @advanceStatusData.currentBalance)
-      template = template.replace("{{availableBalance}}", '$' + @advanceStatusData.availableBalance)
+      template = template.replace("{{advanceLimit}}", '$' + @advanceStatusData.advanceLimit.toFixed(2))
+      template = template.replace("{{currentBalance}}", '$' + @advanceStatusData.currentBalance.toFixed(2))
+      template = template.replace("{{availableBalance}}", '$' + @advanceStatusData.availableBalance.toFixed(2))
     return template
 
   isBlank = (str) ->
