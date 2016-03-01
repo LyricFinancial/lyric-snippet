@@ -1,15 +1,18 @@
 .widget-label {
   font-weight: bold;
+  float: left;
 }
 .widget-container {
-  border-radius: 25px;
-  background: #d01e1e;
-  color: #fff;
-  padding: 20px;
-  width: 235px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #d01e1e;
+  border-width: 1px;
+  padding: 10px;
+  width: 150px;
+  font-size: 8px;
 }
-.widget-container h3 {
-  margin-top: 2px;
+.widget-value {
+  text-align: right;
 }
 
 /* Modal Header */
