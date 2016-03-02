@@ -30,13 +30,16 @@ class LyricWidget
     return promise
 
   getWidget: ->
-    template = mytemplate["templates/advance_status_error_widget.tpl.html"]
+    template = mytemplate["templates/advance_status_widget.tpl.html"]
 
     if isBlank(@advanceStatusData) == false
-      template = mytemplate["templates/advance_status_widget.tpl.html"]
-      template = template.replace("{{advanceLimit}}", '$' + @advanceStatusData.advanceLimit.toFixed(2))
-      template = template.replace("{{currentBalance}}", '$' + @advanceStatusData.currentBalance.toFixed(2))
-      template = template.replace("{{availableBalance}}", '$' + @advanceStatusData.availableBalance.toFixed(2))
+      template = template.replace("{{advanceLimit}}", @advanceStatusData.advanceLimit.toFixed(2))
+      template = template.replace("{{currentBalance}}", @advanceStatusData.currentBalance.toFixed(2))
+      template = template.replace("{{availableBalance}}", @advanceStatusData.availableBalance.toFixed(2))
+    else
+      template = template.replace("{{advanceLimit}}", "-----")
+      template = template.replace("{{currentBalance}}", "-----")
+      template = template.replace("{{availableBalance}}", "-----")
     return template
 
   isBlank = (str) ->
