@@ -7,7 +7,7 @@
   border-radius: 15px;
   border-color: #d01e1e;
   border-width: 1px;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   width: 150px;
   font-size: 8px;
 }
@@ -18,17 +18,26 @@
 .spinner {
   float: none;
 }
+#terms-container {
+  font-size: 16px !important;
+}
+#terms-container p {
+  font-size: 16px !important;
+  line-height: 18px;
+}
+.wait-modal-content {
+  height: 200px !important;
+  width: 425px !important;
+}
 
 h3 {
-  font-size: 24px;
+  font-size: 24px !important;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 /* Modal Header */
 .modal-header {
   padding: 15px;
-  background-color: #5cb85c;
-  color: white;
   float: none;
 }
 /* Modal Body */
@@ -43,11 +52,15 @@ h3 {
 }
 /* Modal Footer */
 .modal-footer {
-  padding: 15px;
+  text-align: center;
+  float: none;
+}
+.modal-footer button {
   background-color: #5cb85c;
   color: white;
-  text-align: right;
-  float: none;
+  font-size: 14px;
+  padding: 10px;
+  width: 250px;
 }
 /* The Modal (background) */
 .modal {
@@ -77,7 +90,7 @@ h3 {
   padding: 20px;
   border: 1px solid #888;
   border-radius: 6px;
-  width: 60%;
+  width: 475px;
   height: 500px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
@@ -125,7 +138,7 @@ h3 {
   text-align: center;
 }
 .spinner {
-  margin: 100px auto;
+  margin: 50px auto;
   width: 50px;
   height: 40px;
   text-align: center;

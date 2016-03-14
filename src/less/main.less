@@ -1,5 +1,5 @@
 h3 {
-  font-size: 24px;
+  font-size: 24px !important;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -7,8 +7,6 @@ h3 {
 /* Modal Header */
 .modal-header {
     padding: 15px;
-    background-color: #5cb85c;
-    color: white;
     float: none;
 }
 
@@ -26,10 +24,16 @@ h3 {
 
 /* Modal Footer */
 .modal-footer {
-    padding: 15px;
-    background-color: #5cb85c;
-    color: white;
-    text-align: right;
+
+    button{
+      background-color: #5cb85c;
+      color: white;
+      font-size: 14px;
+      padding: 10px;
+      width: 250px;
+    }
+    
+    text-align: center;
     float: none;
 }
 
@@ -56,7 +60,7 @@ h3 {
     padding: 20px;
     border: 1px solid #888;
     border-radius: 6px;
-    width: 60%;
+    width: 475px;
     height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -101,7 +105,7 @@ h3 {
 }
 
 .spinner {
-  margin: 100px auto;
+  margin: 50px auto;
   width: 50px;
   height: 40px;
   text-align: center;
