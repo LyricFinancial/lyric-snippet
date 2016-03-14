@@ -14,54 +14,7 @@
 .widget-value {
   text-align: right;
 }
-.wait-indicator,
-.spinner {
-  float: none;
-}
-#terms-container {
-  font-size: 16px !important;
-}
-#terms-container p {
-  font-size: 16px !important;
-  line-height: 18px;
-}
-.wait-modal-content {
-  height: 200px !important;
-  width: 425px !important;
-}
 
-h3 {
-  font-size: 24px !important;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-/* Modal Header */
-.modal-header {
-  padding: 15px;
-  float: none;
-}
-/* Modal Body */
-.modal-body {
-  padding: 15px;
-  height: 340px;
-  float: none;
-}
-.terms {
-  overflow: auto;
-  height: 290px;
-}
-/* Modal Footer */
-.modal-footer {
-  text-align: center;
-  float: none;
-}
-.modal-footer button {
-  background-color: #5cb85c;
-  color: white;
-  font-size: 14px;
-  padding: 10px;
-  width: 250px;
-}
 /* The Modal (background) */
 .modal {
   display: none;
@@ -83,15 +36,31 @@ h3 {
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
 }
-/* Modal Content/Box */
-.modal-content {
+.lyric-snippet-modal {
+  /* Modal Header */
+  /* Modal Content/Box */
+  /* Modal Body */
+  /* Modal Footer */
+  /* The Close Button */
+}
+.lyric-snippet-modal .modal-header {
+  padding: 15px;
+  float: none;
+  border: none !important;
+}
+.lyric-snippet-modal .modal-header h3 {
+  font-size: 24px !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.lyric-snippet-modal .modal-content {
   background-color: #fefefe;
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 6px;
   width: 475px;
-  height: 500px;
+  height: 550px !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -99,18 +68,55 @@ h3 {
   animation-duration: 0.4s;
   float: none !important;
 }
-/* The Close Button */
-.close {
+.lyric-snippet-modal .modal-body {
+  padding: 15px;
+  height: 340px;
+  float: none;
+}
+.lyric-snippet-modal .modal-footer {
+  text-align: center !important;
+  float: none;
+  border: none !important;
+}
+.lyric-snippet-modal .modal-footer button {
+  background-color: #5cb85c;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  width: 250px;
+}
+.lyric-snippet-modal .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-.close:hover,
-.close:focus {
+.lyric-snippet-modal .close:hover,
+.lyric-snippet-modal .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#terms-container {
+  font-size: 16px !important;
+}
+#terms-container p {
+  font-size: 16px !important;
+  line-height: 18px;
+}
+.terms {
+  overflow: auto;
+  height: 290px;
+}
+
+.lyric-snippet-modal .wait-modal-content {
+  height: 225px !important;
+  width: 425px !important;
+}
+.wait-indicator,
+.spinner {
+  float: none;
 }
 /* Add Animation */
 @-webkit-keyframes animatetop {
