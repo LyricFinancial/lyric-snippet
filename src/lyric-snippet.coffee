@@ -58,7 +58,7 @@ class LyricSnippet
 
   advanceRequestComplete: (accessToken) ->
     @waitModal.style.display = "none"
-    window.open(@vatmUrl + '/vatm/#/advance?access_token=' + accessToken,'_blank')
+    window.open(@vatmUrl + '/#/advance?access_token=' + accessToken,'_blank')
 
   advanceRequestError: (error) ->
     document.getElementById('errorMessage').innerHTML = error.statusText
