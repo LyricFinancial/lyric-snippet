@@ -20,7 +20,7 @@ class LyricSnippet
     if vatmUrl?
       @vatmUrl = vatmUrl
     else
-      @vatmUrl = 'https://demoservices.lyricfinancial.com'
+      @vatmUrl = 'https://vatm-stage.lyricfinancial.com'
 
     @modal = LyricSnippet.modal = document.getElementById('tcModal')
     @waitModal = LyricSnippet.waitModal = document.getElementById('waitModal')

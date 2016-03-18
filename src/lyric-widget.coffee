@@ -5,7 +5,7 @@ class LyricWidget
     if advanceUrl?
       @advanceUrl = advanceUrl
     else
-      @advanceUrl = 'https://integrationservices.lyricfinancial.com/widgetAPI/v1/clients/' + vendorClientAccountId + '/advanceStatus'
+      @advanceUrl = 'https://stageservices.lyricfinancial.com/widgetAPI/v1/clients/' + vendorClientAccountId + '/advanceStatus'
 
   loadData: (token)->
     request = new XMLHttpRequest
