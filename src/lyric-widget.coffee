@@ -2,7 +2,7 @@ class LyricWidget
   @advanceStatusData
   @advanceUrl
   constructor: (vendorClientAccountId, host) ->
-    @advanceUrl = host + '/widgetAPI/v1/clients/' + vendorClientAccountId + '/advanceStatus'
+    @advanceUrl = host + '/v1/clients/' + vendorClientAccountId + '/advanceStatus'
 
   loadData: (token)->
     request = new XMLHttpRequest
