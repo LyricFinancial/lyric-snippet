@@ -1,11 +1,8 @@
 class LyricWidget
   @advanceStatusData
   @advanceUrl
-  constructor: (vendorClientAccountId, advanceUrl) ->
-    if advanceUrl?
-      @advanceUrl = advanceUrl
-    else
-      @advanceUrl = 'https://stageservices.lyricfinancial.com/widgetAPI/v1/clients/' + vendorClientAccountId + '/advanceStatus'
+  constructor: (vendorClientAccountId, host) ->
+    @advanceUrl = host + '/widgetAPI/v1/clients/' + vendorClientAccountId + '/advanceStatus'
 
   loadData: (token)->
     request = new XMLHttpRequest
