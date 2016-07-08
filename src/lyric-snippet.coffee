@@ -59,7 +59,6 @@ class LyricSnippet
 
   @confirmed: ->
     
-
     if window.CustomEvent
       event = new CustomEvent('confirmationComplete')
     else
@@ -69,7 +68,7 @@ class LyricSnippet
 
     LyricSnippet.modal.style.display = 'none'
 
-    if @strategy = 'async'
+    if @strategy == 'async'
       LyricSnippet.redirectModal.style.display = 'none'
       window.open(LyricSnippet.vatmUrl + '/#/advance?async_token=' + LyricSnippet.asyncToken,'_blank')
       return
