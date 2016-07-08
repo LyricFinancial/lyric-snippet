@@ -7,7 +7,7 @@ class LyricSnippet
   @vatmUrl
   @accessToken
   @strategy
-  constructor: (termsHtml, strategy, vatmUrl) ->
+  constructor: (termsHtml, strategy, asyncToken, vatmUrl) ->
     modalTemplate = mytemplate["templates/terms_and_conditions_modal.tpl.html"]
     document.body.insertAdjacentHTML('beforeend', modalTemplate)
 
@@ -24,6 +24,7 @@ class LyricSnippet
       document.getElementById('terms-container').innerHTML = termsHtml
 
     @strategy = LyricSnippet.strategy = strategy
+    @asyncToken = LyricSnippet.asyncToken = asyncToken
 
     if vatmUrl?
       @vatmUrl = vatmUrl
@@ -57,6 +58,8 @@ class LyricSnippet
     LyricSnippet.errorModal.style.display = "none"
 
   @confirmed: ->
+    
+
     if window.CustomEvent
       event = new CustomEvent('confirmationComplete')
     else
@@ -65,6 +68,12 @@ class LyricSnippet
     document.dispatchEvent event
 
     LyricSnippet.modal.style.display = 'none'
+
+    if @strategy = 'async'
+      LyricSnippet.redirectModal.style.display = 'none'
+      window.open(LyricSnippet.vatmUrl + '/#/advance?async_token=' + LyricSnippet.asyncToken,'_blank')
+      return
+
     LyricSnippet.waitModal.style.display = "block"
 
   @redirectToVatm: ->
