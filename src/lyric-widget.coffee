@@ -28,15 +28,15 @@ class LyricWidget
 
   getWidget: ->
     template = mytemplate["templates/advance_status_widget.tpl.html"]
+    widgetValuesTemplate = mytemplate["templates/widget_values.tpl.html"]
 
     if isBlank(@advanceStatusData) == false
-      template = template.replace("{{advanceLimit}}", @advanceStatusData.advanceLimit.toFixed(2))
-      template = template.replace("{{currentBalance}}", @advanceStatusData.currentBalance.toFixed(2))
-      template = template.replace("{{availableBalance}}", @advanceStatusData.availableBalance.toFixed(2))
-    else
-      template = template.replace("{{advanceLimit}}", "-----")
-      template = template.replace("{{currentBalance}}", "-----")
-      template = template.replace("{{availableBalance}}", "-----")
+      widgetValuesTemplate = widgetValuesTemplate.replace("{{advanceLimit}}", @advanceStatusData.advanceLimit.toFixed(2))
+      widgetValuesTemplate = widgetValuesTemplate.replace("{{currentBalance}}", @advanceStatusData.currentBalance.toFixed(2))
+      widgetValuesTemplate = widgetValuesTemplate.replace("{{availableBalance}}", @advanceStatusData.availableBalance.toFixed(2))
+
+      template = template.replace('<div class="widget-values"></div>', widgetValuesTemplate)
+
     return template
 
   isBlank = (str) ->
