@@ -70,14 +70,14 @@ class LyricSnippet
 
     if @strategy == 'async'
       LyricSnippet.redirectModal.style.display = 'none'
-      window.open(LyricSnippet.vatmUrl + '/#/advance?access_token=' + LyricSnippet.asyncToken,'_blank')
+      window.open(LyricSnippet.vatmUrl + '/advance?access_token=' + LyricSnippet.asyncToken,'_blank')
       return
 
     LyricSnippet.waitModal.style.display = "block"
 
   @redirectToVatm: ->
     LyricSnippet.redirectModal.style.display = 'none'
-    window.open(LyricSnippet.vatmUrl + '/#/advance?access_token=' + LyricSnippet.accessToken,'_blank')
+    window.open(LyricSnippet.vatmUrl + '/advance?access_token=' + LyricSnippet.accessToken,'_blank')
 
   advanceRequestComplete: (accessToken) ->
     @waitModal.style.display = "none"
