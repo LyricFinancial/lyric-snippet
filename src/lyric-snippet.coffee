@@ -29,7 +29,7 @@ class LyricSnippet
     if vatmUrl?
       @vatmUrl = vatmUrl
     else
-      @vatmUrl = 'https://vatm-stage.lyricfinancial.com'
+      @vatmUrl = 'https://vatm-sandbox.lyricfinancial.com'
 
     LyricSnippet.vatmUrl = @vatmUrl
 
